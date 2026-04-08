@@ -1248,6 +1248,12 @@ jobs:
           else
             echo "needs-linting=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Ensure super-linter log is readable
+        if: always()
+        run: |
+          if [ -f "super-linter.log" ]; then
+            sudo chmod a+r super-linter.log
+          fi
       - name: Upload super-linter log
         if: always()
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
@@ -1298,4 +1304,3 @@ jobs:
         with:
           key: memory-none-nopolicy-${{ env.GH_AW_WORKFLOW_ID_SANITIZED }}-${{ github.run_id }}
           path: /tmp/gh-aw/cache-memory
-

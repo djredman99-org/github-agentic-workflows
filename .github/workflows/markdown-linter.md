@@ -62,6 +62,13 @@ jobs:
             echo "needs-linting=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Ensure super-linter log is readable
+        if: always()
+        run: |
+          if [ -f "super-linter.log" ]; then
+            sudo chmod a+r super-linter.log
+          fi
+
       - name: Upload super-linter log
         if: always()
         uses: actions/upload-artifact@v7
