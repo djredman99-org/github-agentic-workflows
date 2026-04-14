@@ -1,0 +1,48 @@
+{
+  "name": "@djredman99-org/github-copilot-agent-plugin",
+  "version": "1.0.0",
+  "description": "A collection of reusable GitHub Copilot agent customizations for code review, documentation, and development workflows",
+  "main": ".github/",
+  "files": [
+    ".github/**/*",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "github-copilot",
+    "copilot",
+    "agent",
+    "plugin",
+    "ai",
+    "code-review",
+    "documentation",
+    "refactoring",
+    "python",
+    "development-tools"
+  ],
+  "author": {
+    "name": "djredman99-org",
+    "url": "https://github.com/djredman99-org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djredman99-org/github-agentic-workflows"
+  },
+  "bugs": {
+    "url": "https://github.com/djredman99-org/github-agentic-workflows/issues"
+  },
+  "homepage": "https://github.com/djredman99-org/github-agentic-workflows#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "test": "echo 'No tests specified'",
+    "validate": "node scripts/validate-plugin.js",
+    "prepublishOnly": "npm run validate"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
